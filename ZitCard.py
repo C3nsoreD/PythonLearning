@@ -28,7 +28,6 @@ class ZitCard:
     def get_balance(self):
         return self._balance
     
-
     def charge(self, price):
         """ Charge given price to the card, assuming sufficient balance """
 
@@ -43,12 +42,17 @@ class ZitCard:
     
 if __name__ == "__main__":
     """ Run tests """
-    # cc = ZitCard('1st Bank' '5391 0375 9387 5309', 1000, "John Doe")
+    cc = ZitCard('1st Bank', '5391 0375 9387 5309', 1000, "John Doe")
     wallet = []
     wallet.append(ZitCard('1st Bank,', '5391 0375 9387 5309', 1000, "John Doe"))
     wallet.append(ZitCard('1st Bank,', '5391 0375 9387 6309', 1000, "John lam"))
     wallet.append(ZitCard('1st Bank,', '5391 0375 9387 7309', 1000, "Richard lam"))
-
+    
+    print(len(wallet))
+    if cc:
+        print('True')
+    print(len(cc)) # Will return type error 
+    
 
     for val in range(1, 17):
         wallet[0].charge(val)
