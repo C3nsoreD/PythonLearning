@@ -1,0 +1,12 @@
+# Quick demo of insertion sort algorthim
+
+lst = [1,3,5,2,5,6]
+item = 0
+j = 0
+for item in lst:
+	elm = lst[item]
+	item = j -1
+	while item > 0 & lst[item] > elm:
+		item = item - 1
+	lst[item + 1] = elm 
+print(lst)
