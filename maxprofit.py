@@ -8,14 +8,19 @@ def maxProfit(prices):
     # empty list
     if len(prices) == 0:
         return 0 
-    j = 0
+    first = prices[0]
     profit = 0
 
+    # for i in range(1, len(prices)):
+    #     if prices[i] > prices[i- 1]:
+    #         profit += prices[i] - prices[i - 1]
     for i in range(1, len(prices)):
-        if prices[i] > prices[i- 1]:
-            profit += prices[i] - prices[i - 1]
-        
+        if prices[i] > first:
+            profit += prices[i] - first
+        first = prices[i]
+
     return profit
                 
 
-maxProfit([1, 3, 2, 6, 2, 1])
+print(maxProfit([1, 3, 
+2, 6, 2, 1]))
