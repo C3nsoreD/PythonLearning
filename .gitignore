@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .vscode/
+.idea/
 
 # C extensions
 *.so
@@ -71,3 +72,4 @@ pipfile
 .vscode
 instance/
 .env
+.idea

@@ -1,3 +1,4 @@
+
 def anagram(s1, s2):
     # Remove spaces and Uppercase letter 
     s1 = s1.replace(' ', '').lower()
@@ -12,10 +13,11 @@ def anagramTwo(s1, s2):
     s1 = s1.replace(' ', '').lower()
     s2 = s2.replace(' ', '').lower()
     
+    # check lengths 
     if len(s1) != len(s2):
         return False
     
-    # Coun the frequency of each letter
+    # create a frequency table of letters
     count = {}
     
     for letter in s1:
@@ -24,7 +26,7 @@ def anagramTwo(s1, s2):
         else:
             count[letter] = 1
 
-    # Remove the same letters using s2
+    # Update the frequency table reducing the count of the elements
     for letter in s2:
         if letter in count:
             count[letter] -= 1

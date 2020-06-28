@@ -1,24 +1,36 @@
 def contains(nums):
-    nums.sort()
-    
+    # check if the array is empty   
     if len(nums) == 0:
         return False
 
-    prev = nums[0]
+    # Sort the array of integers 
+    nums.sort()
+
+    start = nums[0]
+    
     for i in range(1, len(nums)):
-        if nums[i] == prev:
+        # compare the elemnents for equality
+        if nums[i] == start:
             return True
         else:
-            prev = nums[i]
+            # change the start position
+            start = nums[i]
     
     return False
 
 
-def checkDuplicate():
+def checkDuplicate(array):
+    # create a frequecny
     count = {}
-    for item in lst:
+    # iiterate over the list 
+    for item in array:
+        # check the frequncy of each item
         if item not in count:
             count[item] = 1
         else:
             return True
+
     return False
+
+
+print(checkDuplicate([1, 2, 1, 3, 5]))

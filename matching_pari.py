@@ -1,4 +1,8 @@
-""" Given a list of numbers find the pair that sums up to the given number"""
+"""
+ Given a list of numbers find the pair that sums up to the given number
+ 
+
+"""
 
 def pair(array, x):
     # check empty 
