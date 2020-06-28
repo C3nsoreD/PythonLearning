@@ -11,12 +11,14 @@ def pair(array, x):
 
     # storage 
     seen = {}
+    # Brute force method 0(n^2)
     # for i in range(len(array)):
     #     for j in range(i + 1, len(array)):
     #         if array[i] + array[j] == x:
     #             seen.append((array[i], array[j]))
 
     # return seen
+
     for value in array:
         seen[value] = False
     
@@ -48,4 +50,5 @@ if __name__ == '__main__':
     
 # print(pair(, 12))
 
-frequency([1,2,1,2,1,1,2, 3, 4, 1, 2], 1)
+# frequency([1,2,1,2,1,1,2, 3, 4, 1, 2], 1)
+# print(list(range(8, 8)))
