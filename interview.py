@@ -11,7 +11,8 @@ def main(arr):
 def isunique(table):
     for k in table:
         if k in table:
-            
+            pass
+
 def solution2(arr, table):
     for k in table:
         while (table[k] > 1) and isunqiue(table):
