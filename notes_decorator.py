@@ -1,4 +1,4 @@
-
+ # Decorator function definition.
 def logging(func):
     def log_fucntion_called():
         print(f'{func} called.')

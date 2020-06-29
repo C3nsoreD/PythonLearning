@@ -7,6 +7,7 @@ def largest(arr):
     # check for empty array
     if len(arr) == 0:
         return 0
+        
     # For 1 element in the array 
     max_sum = current_sum = arr[0]
 

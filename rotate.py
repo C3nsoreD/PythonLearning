@@ -9,9 +9,10 @@ def solution_one(nums, k):
 
 def solution_two(nums, k):
     n = len(nums)
+
     temp_arr = [0] * n
     for i in range(n):
-        temp_arr[(i +   k) % n] = nums[i]
+        temp_arr[(i +  k) % n] = nums[i]
 
     nums[:] = temp_arr
     return nums

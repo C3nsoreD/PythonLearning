@@ -12,6 +12,7 @@ def pair(array, x):
     # storage 
     seen = {}
     # Brute force method 0(n^2)
+   
     # for i in range(len(array)):
     #     for j in range(i + 1, len(array)):
     #         if array[i] + array[j] == x:

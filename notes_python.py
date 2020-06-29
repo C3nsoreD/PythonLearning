@@ -18,14 +18,14 @@ def add_chars(str1):
     print( id(str2) ) #=> 4353702856
     
     
-# add_chars(name)
-# print(name) #=>text
+add_chars(name)
+print(name)     # => text
 
 '''
 What is the difference between a shallow and a deep copy?
 '''
 # pointing by reference
-li1 = [['a'],['b'],['c']]
+li1 = [['a'], ['b'], ['c']]
 li2 = li1
 li1.append(['d'])
 print(li2)  #=> [['a'], ['b'], ['c'], ['d']]

@@ -18,7 +18,7 @@ def pair_sum(array, x):
         if val not in seen:
             seen.add(num) # collects all unique 
         else:
-            # output.add((num, target))
+            # output.add((num, val))
             output.add((min(num, val), max(num, val)))
  
     print('\n'.join(map(str, list(output))))
