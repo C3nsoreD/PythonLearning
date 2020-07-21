@@ -13,9 +13,11 @@ def isunique(table):
         if k in table:
             pass
 
+    return False
+
 def solution2(arr, table):
     for k in table:
-        while (table[k] > 1) and isunqiue(table):
+        while (table[k] > 1) and isunique(table):
             arr.insert(arr.index(k), 2*k)
             arr.remove(k) 
             table[k] -= 1
