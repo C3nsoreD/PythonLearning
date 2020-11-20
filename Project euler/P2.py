@@ -7,9 +7,7 @@ def fib():
     fibLst = []
     while check:
         c = a + b
-        a = b
-        b = c
-        #print b
+        a, b = b,  c
         fibLst.append(b)
         if b >= 3000000:
             check = False
@@ -23,7 +21,6 @@ def main():
     for i in fLst:
         if i % 2 == 0:
             fbHld.append(i)
-            
     print(sum(fbHld))
 
 main()
