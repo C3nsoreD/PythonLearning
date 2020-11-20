@@ -14,7 +14,3 @@ def sort_x(l):
 print(type(_y))  # class range
 print(type(y))  # class list
 print(type(sort_x))  # class function
-
-class NewFunc(function):
-    def __init__(self):
-        
