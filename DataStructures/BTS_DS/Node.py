@@ -3,7 +3,6 @@
 
 
 class Node(object):
-
     def __init__(self, data):
         self.data = data
         self.leftChild = None
@@ -70,5 +69,13 @@ class Node(object):
             self.rightChild.traverseInOrder()
 
 
+# Test the BTS list
+if __name__ == "__main__":
+    test = Node(0)
+    print()
+    for x in range(2, 9):
+        test.insert(x)
 
-
+    test.traverseInOrder()
+    test.remove(4) # weird behaviour here!
+    

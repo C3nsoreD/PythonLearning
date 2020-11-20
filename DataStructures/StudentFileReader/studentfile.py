@@ -1,17 +1,30 @@
 __author__ = "Gabriel Ugolole"
 
+# Storage class used for an individual student record
+class StudentRecord:
+    def __init__(self):
+        self.idNum = 0
+        self.firstName = None
+        self.lastName = None
+        self.classCode = 0
+        self.gpa = 0.0
+
 
 class StudentFileReader:
-    def __init__(self, inputSrc):
-        self._inputSrc = inputSrc
-        self._inputFile = None  # Input file set to None
+    def __init__(self, file_path):
+        self._input_source = file_path
+        self._inputFile = None  
 
-    def open(self):
-        self._inputFile = open(self._inputSrc, "r")  # Sets the file for reading
+    def open(self, mode=None):
+        # Default mode = 'r'
+        if mode:
+            self._inputFile = open(self._inputSrc, "r")  # Sets the file for reading
+        else:
+            self._inputFile = open(self._inputSrc, mode)
 
     def close(self):
         self._inputFile.close()
-        self._inputFile = None  # Resets the inputFile to None
+        self._inputFile = None  # Reset inputFile to None
 
     def fetchAll(self):
         theRecords = list()  # empty list for keeping the records
@@ -36,11 +49,3 @@ class StudentFileReader:
         return student
 
 
-# Storage class used for an individual student record
-class StudentRecord:
-    def __init__(self):
-        self.idNum = 0
-        self.firstName = None
-        self.lastName = None
-        self.classCode = 0
-        self.gpa = 0.0

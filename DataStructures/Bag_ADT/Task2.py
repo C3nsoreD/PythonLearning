@@ -12,7 +12,7 @@ value = int(input("Guess a value contained in the bag to list all the values in 
 if value in myBag:
     print("The bag contains the value", value)
     passed = True
-    print("Here's a list of all the items iin the bag")
+    print("Here's a list of all the items in the bag")
 else:
     print("The bag does not contain the value", value)
     passed = False
