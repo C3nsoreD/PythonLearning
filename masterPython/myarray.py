@@ -15,6 +15,10 @@ class Array:
         # Inializes the array with None
         self.clear(None)
     
+    def clear(self, value):
+        for i in range(len(self)):
+            self._elements[i] = value
+    
     def __len__(self):
         return self._size
 
@@ -32,10 +36,8 @@ class Array:
     def __iter__(self):
         return _ArrayIterator(self._elements)
 
-    def clear(self, value):
-        for i in range(len(self)):
-            self._elements[i] = value
-    
+    def __str__(self):
+        return self._elements
 
 class _ArrayIterator:
     def __init__(self, ArrayType):
@@ -52,3 +54,25 @@ class _ArrayIterator:
             return entry
         else:
             raise StopIteration
+
+
+# usage of this cool array 
+if __name__ == "__main__":
+    import random 
+    # my_counts = Array(12)
+
+    with open("masterPython\input00.txt", 'r') as f:
+        lines = f.read().strip()
+        # Use my array to count the number of occurances.
+        my_counts = Array(len(lines) + 5)
+        my_counts.clear(0)  # initializes with 0s
+
+        for line in lines:
+            num = ord(line)
+            my_counts[num] += 1 
+    
+    for i in range(26):
+        print(
+            f"{chr(97 + i)}, {my_counts[97 + i]} "
+        )
+        

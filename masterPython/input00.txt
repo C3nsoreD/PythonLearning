@@ -1,0 +1,13 @@
+12
+insert nineteen five
+insert twelve tem
+insert zero one
+print
+remove six
+append 
+append 
+sort
+print
+pop
+reverse
+print
