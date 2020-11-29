@@ -14,6 +14,11 @@ class Matrix(Array2D):
     #             _temp[j] = _row[i]
     #     return _temp
 
-    def __getitem__(self, n_idx):
-        return self[]
+    def multiply(self):
+        pass 
     
+    def add(self):
+        pass
+    
+    def subtract(self):
+        pass 
