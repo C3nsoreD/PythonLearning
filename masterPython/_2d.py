@@ -14,7 +14,7 @@ i = 0
 for student in gradeFile :
     grades = student.split()
     for j in range(numExams):  # 0-3
-        print(i, j)
+        # print(i, j)
         examGrades[i, j] = int( grades[j] )
     i += 1
 # Close the text file.

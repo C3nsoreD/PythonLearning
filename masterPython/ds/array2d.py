@@ -7,7 +7,7 @@ class Array2D:
         self._Cols = Array(numCols) 
         # Create the cols 
         for i in range(numRows):
-            self._Rows[i] = self._Cols 
+            self._Rows[i] = Array(numCols) 
     
     def numRows(self):
         return len(self._Rows)
@@ -21,15 +21,13 @@ class Array2D:
     
     # n_idx is a tuple
     def __getitem__(self, n_idx):
-        
         assert len(n_idx) == 2, 'Invalid indexing. ex (1, 2)'
-        row = n_idx[0]
-        col = n_idx[1]
+        row, col = n_idx
         assert row >= 0 and row < self.numRows() and col >= 0 and col < self.numCols(), "Array indexes out of range"
-        
-        _1dArray = self._Rows[row]
-      # return self._Rows[row][col]
-        return _1dArray[col]
+        the1dArray = self._Rows[row]
+        # return self._Rows[row][col]
+        # print(type(the1dArray[col]))
+        return the1dArray[col]
 
     def __setitem__(self, n_idx, value):
         assert len(n_idx) == 2, 'Invalid indexing. ex (1, 2)'

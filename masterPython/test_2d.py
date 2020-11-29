@@ -16,20 +16,17 @@ with open("tests/2dtest.txt", "r") as gradeFile:
     i = 0
     # print(gradeFile.read()[:])
     for student in gradeFile.readlines():
-        # grades = student.split()
-        # print(type(student))
-        # print()
+        grades = student.split()
         for j in range(numE):
-            print(student[j])
-            # examGrades[i, j] = int(student[j])
-            # examGrades[i, j] = int(j)
-        # i += 1
+            examGrades[i, j] = int(grades[j])
+        i += 1
 
 # print
-# for i in range(numStudents): # row
-#     total = 0
-#     for j in range(numE): # col
-#         total += examGrades[i, j]
+for i in range(numStudents): # row
+    total = 0
+    for j in range(numE): # col
+        # print(type(examGrades[i, j]))
+        total += examGrades[i, j]
     
-#     examAvg = total / numE
-#     print(f"{i+1:2d} : {examAvg:6.2f}")
+    # examAvg = total / numE
+    # print(f"{i+1:2d} : {examAvg:6.2f}")
