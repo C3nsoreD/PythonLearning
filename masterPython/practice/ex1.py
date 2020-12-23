@@ -83,14 +83,102 @@ def dutch_flag_patition_1(A, i):
         
     return A
 
+def plus_one(A):
+    """
+    Write a program which takes as input an array of digits encoding a nonnegative decimal integer
+    D and updates the array to represent the integer D + 1. For example, if the input is (7,2,9) then
+    you should update the array to (1,3,0). Your algorithm should work even if it is implemented in a
+    language that has finite-precision arithmetic
+    """
+    # Brute force algorithim
+    A[-1] += 1
+    for i in reversed(range(1, len(A))):
+        if A[i] != 10:
+            break
+        A[i] = 0
+        A[i - 1] += 1
+    
+    if A[0] == 10:
+        A[0] = 1
+        A.append(0)
+    
+    return A
 
+def multipy(num1, num2):
+    """ Problem statement.
+
+    """
+    sign = -1 if (num1[0] < 0) ^ (num2[0] < 0) else 1
+    num1[0], num2[0] = abs(num1[0]), abs(num2[0])
+    
+    result = [0] * (len(num1)+ len(num2))
+
+    for i in reversed(range(len(num1))):
+        for j in reversed(range(len(num2))):
+            result[i + j + 1] += num1[i] * num2[j]
+            result[i + j] += result[i + j + 1] // 10
+            result[i + j + 1] %= 10
+    # print(result)
+    result = result[next((i for i, x in enumerate(result) if x != 0), len(result)):] or [0]
+    # print(result)
+    return [sign * result[0]] + result[1:]     
+
+def can_reach_end(A):
+    """ Problem statement
+
+    """
+    further_reach, last_index = 0, len(A) - 1
+    i = 0
+    while i <= further_reach and further_reach < last_index:
+        further_reach = max(further_reach, A[i] + i)
+        i += 1
+    return further_reach >= last_index
+
+
+def delete_duplicate(A, key):
+    """ PROBLEM
+    Write a program which takes as input a sorted array and updates it so that all duplicates have been
+    removed and the remaining elements have been shifted left to fill the emptied indices. Return the
+    number of valid elements. 
+    """
+    
+    if not A:
+        return 0
+
+    valid_count = 1
+    for i in range(1, len(A)):
+        if A[valid_count - 1] != A[i]:
+            A[valid_count] = A[i]
+            valid_count += 1
+
+    return valid_count, A
+
+def delete_duplicate_v2(A, m):
+    if not A or m <= 0:
+        return 0
+    write_index, count = 1, 1
+    for i in range(1, len(A)):
+        if A[write_index - 1] == A[i]:
+            count += 1
+        else:
+            count = 1
+        if A[write_index - 1] != A[i] or count <= min(2, m):
+            A[write_index] = A[i]
+            write_index += 1
+    return write_index
 
 if __name__ == "__main__":
-    x = 5
-    A = [6, 3, 5, 1, 6, 3, 0, 15, 12]
-    B = [0, 1, 0, 0, 1, 3, 2, 2, 1, 2, 1, 3, 0, 1 ,3, 3]
-    print(median(B))
+    X = [5, 0, 1]
+    Y = [1, 2, 3]
+    A = [2, 0, 2, 0, 1, 3, 4]
+    B = [1, 0, 0, 1, 3, 2, 2, 1, 2, 1, 3, 0, 1 ,3, 3]
+    C = [0, 1, 1, 2, 2, 3, 4, 5, 8]
+    # print(median(B))
     # print(count_bits(100))
     # print(parity(10001))
     # print(even_odd(A))
-    print(dutch_flag_patition_1(B, 0))
+    # print(plus_one(A))
+    print(multipy(X, Y))
+    print(can_reach_end(A))
+    # print(dutch_flag_patition_1(B, 0))
+    print(delete_duplicate(C))
