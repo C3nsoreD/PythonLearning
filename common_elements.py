@@ -5,15 +5,12 @@ Common elements in two sorted arrays
 
 
 def common_elements(a, b):
-    """
-    Using the pointer approach
-    """
+    # Using pointers 
     # assign indexes for both arrays
 
     i, j = 0, 0
-
     result = []
-    # compare the lengths
+    
     while i < len(a) and j < len(b):
         # check commonality
         if a[i] == b[i]:
@@ -29,5 +26,5 @@ def common_elements(a, b):
 
     return result
 
-
+# tests
 print(common_elements([1,0,3,6,4], [1,2,3,5,9,0]))

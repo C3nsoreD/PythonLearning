@@ -1,4 +1,6 @@
-
+"""
+The program checks if  str: s1 is an anagram of str: s2
+"""
 def anagram(s1, s2):
     # Remove spaces and Uppercase letter 
     s1 = s1.replace(' ', '').lower()
@@ -9,18 +11,18 @@ def anagram(s1, s2):
 
 
 def anagramTwo(s1, s2):
-    # Remove spaces and Uppercase letter 
+    # Checks
     s1 = s1.replace(' ', '').lower()
     s2 = s2.replace(' ', '').lower()
     
     # check lengths 
     if len(s1) != len(s2):
         return False
-    
-    # create a frequency table of letters
+        
+    # hash table 
     count = {}
-    
     for letter in s1:
+        # count the number of letters
         if letter in count:
             count[letter] += 1
         else:

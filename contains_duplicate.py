@@ -1,36 +1,35 @@
+"""
+Problem: Write a function that checks if array A contains ducplicates.
+Two implementations of check_duplicates function
+
+"""
 def contains(nums):
     # check if the array is empty   
     if len(nums) == 0:
         return False
-
     # Sort the array of integers 
     nums.sort()
-
-    start = nums[0]
-    
+    start_index = nums[0]
     for i in range(1, len(nums)):
-        # compare the elemnents for equality
-        if nums[i] == start:
+        if nums[i] == start_index:
             return True
         else:
-            # change the start position
-            start = nums[i]
-    
+            start_index = nums[i]    
     return False
 
 
 def checkDuplicate(array):
-    # create a frequecny
+    # Solved using a heah table /frequency table 
     count = {}
     # iiterate over the list 
     for item in array:
-        # check the frequncy of each item
-        if item not in count:
-            count[item] = 1
+        # check if the item already exists in table
+        if item in count:
+            return True, count
         else:
-            return True
-
+            count[item] = 1
     return False
 
 
 print(checkDuplicate([1, 2, 1, 3, 5]))
+# print(contains([1, 2, 1, 3, 5]))
