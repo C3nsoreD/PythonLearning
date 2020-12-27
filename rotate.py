@@ -1,4 +1,7 @@
-"""Given an array, rotate the array to the right by k steps, where k is non-negative."""
+"""
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+"""
+
 def solution_one(nums, k):
     for _ in range(k):
         previous = nums[-1]
@@ -9,8 +12,8 @@ def solution_one(nums, k):
 
 def solution_two(nums, k):
     n = len(nums)
-
     temp_arr = [0] * n
+    
     for i in range(n):
         temp_arr[(i +  k) % n] = nums[i]
 

@@ -8,6 +8,7 @@ def main(arr):
 
     print(solution2(arr, table))
 
+
 def isunique(table):
     for k in table:
         if k in table:

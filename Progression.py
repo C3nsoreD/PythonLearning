@@ -2,7 +2,6 @@ class Progression:
     """ Iterator producing a generic progression """
 
     def __init__(self, start=0):
-
         self._current = start   # Initialize the current value to start
 
     def _advance(self):
@@ -37,4 +36,3 @@ class ArithmeticProgression(Progression):
         super().__init__(start)
         self._increment = increment
     
-    def 

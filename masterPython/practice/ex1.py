@@ -176,6 +176,7 @@ def delete_duplicate_v2(A, m):
 
 def buy_and_sell_once(A):
     min_price, max_price = float('inf'), 0.0
+    
     for price in A:
         max_profit_sell_today = price - min_price
         max_profit = max(max_profit, max_profit_sell_today)
@@ -249,6 +250,7 @@ def my_permutation(perm, A):
             next = temp
     perm[:] = [a + len(perm) for a in perm]
     return perm
+
 
 def apply_permutation(perm, A):
     

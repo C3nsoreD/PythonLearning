@@ -1,12 +1,10 @@
 """
-Write a function that will take 3 arugments:
-bombs = [[r1, c1], [r2, c2]] - bomb location
-rows, columns - the matrix dimensions
-
-we should return an 3 x 4 array (-1) = bomb
-
-
+    Given 3 args, bombs: 2D location of bombs; r, c: size of matrix
+    Populate the matrix with a value that represents how many squares 
+    the bomb is locacted wrt to that square. 
+    
 """ 
+
 def mine_sweeper(bombs, num_rows, num_cols):
     # create a fill the field 
     mine_field = [[0 for i in range(num_cols)] for j in range(num_rows)]
@@ -28,5 +26,5 @@ def mine_sweeper(bombs, num_rows, num_cols):
         
     return mine_field
 
-for row in mine_sweeper([[0, 1], [2, 3]], 5, 5):
+for row in mine_sweeper([[1, 2], [3, 3]], 5, 5):
     print(row)

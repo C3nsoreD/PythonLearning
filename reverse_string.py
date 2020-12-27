@@ -1,3 +1,6 @@
+"""
+Write a function that reverses a string
+"""
 def function_two(s):
     """
     Do not return anything, modify s in-place instead.
@@ -9,7 +12,7 @@ def function_two(s):
     while first < last:
         s[first], s[last] = s[last], s[first]
         first, last = first + 1, last - 1
-
+    
 
 def function_one(s):
     """ example: 'this is a normal string' """
@@ -31,5 +34,5 @@ def function_one(s):
 
 
 print(function_one('this is a normal string'))
-
+print()
 # print(function_two('this is a normal string'))

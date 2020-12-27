@@ -25,6 +25,7 @@ def rotate(list1, list2):
 
     for x in range(len(list1)):
         list2_index = (key_index + x) % len(list1)
+        # 
         if list1[x] != list2[list2_index]:
             return False
     return True
